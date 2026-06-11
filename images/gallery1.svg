@@ -1,0 +1,27 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#grad1)"/>
+  <!-- Browser Frame -->
+  <rect x="30" y="30" width="540" height="340" fill="white" rx="10"/>
+  <rect x="30" y="30" width="540" height="40" fill="#e5e7eb" rx="10" ry="0"/>
+  <circle cx="50" cy="50" r="5" fill="#ef4444"/>
+  <circle cx="70" cy="50" r="5" fill="#f59e0b"/>
+  <circle cx="90" cy="50" r="5" fill="#10b981"/>
+  <text x="300" y="25" font-size="12" text-anchor="middle" fill="#6b7280">tokomaju.id</text>
+  <!-- Content -->
+  <rect x="50" y="90" width="500" height="30" fill="#3b82f6" rx="5"/>
+  <text x="60" y="112" font-size="14" fill="white" font-weight="bold">🛒 TokoMaju E-Commerce Platform</text>
+  <rect x="50" y="140" width="230" height="180" fill="#f3f4f6" rx="5"/>
+  <circle cx="165" cy="200" r="30" fill="#e5e7eb"/>
+  <text x="165" y="207" font-size="20" text-anchor="middle">📱</text>
+  <text x="165" y="240" font-size="12" text-anchor="middle" fill="#6b7280">Product 1</text>
+  <rect x="310" y="140" width="230" height="180" fill="#f3f4f6" rx="5"/>
+  <circle cx="425" cy="200" r="30" fill="#e5e7eb"/>
+  <text x="425" y="207" font-size="20" text-anchor="middle">📦</text>
+  <text x="425" y="240" font-size="12" text-anchor="middle" fill="#6b7280">Product 2</text>
+</svg>

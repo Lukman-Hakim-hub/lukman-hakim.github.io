@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TechNova - Startup Teknologi Terdepan. Solusi Digital Terbaik untuk Bisnis Anda. Web Development, Mobile Apps, dan UI/UX Design." />
+    <meta name="keywords" content="teknologi, startup, web development, mobile apps, ui ux design, digital transformation" />
+    <meta name="author" content="TechNova" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:title" content="TechNova - Solusi Digital Terbaik" />
+    <meta property="og:description" content="Startup Teknologi yang Menghadirkan Inovasi Digital untuk Bisnis Anda" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=TechNova" />
+
+    <!-- Title & Favicon -->
+    <title>TechNova | Startup Teknologi Terpadu</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232563eb' width='100' height='100'/><text x='50' y='65' font-size='60' fill='white' text-anchor='middle' font-weight='bold'>T</text></svg>"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Configure Tailwind for dark mode
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-slate-50 text-slate-800 font-sans dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <!-- 1. Header / Navigation -->
+    <header class="fixed w-full top-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm z-50 transition-colors duration-300">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400">TechNova<span class="text-slate-800 dark:text-slate-100">.</span></a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8 items-center">
+          <a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a>
+          <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
+          <a href="#services" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Services</a>
+          <a href="#gallery" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Gallery</a>
+          <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</a>
+          <a href="#contact" class="bg-blue-600 dark:bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition transform hover:scale-105">Daftar Sekarang</a>
+
+          <!-- Dark Mode Toggle -->
+          <button id="darkModeToggle" class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center hover:bg-slate-300 dark:hover:bg-slate-600 transition" aria-label="Toggle dark mode">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:inline"></i>
+          </button>
+        </nav>
+
+        <!-- Mobile Menu Button & Dark Mode Toggle -->
+        <div class="md:hidden flex items-center space-x-4">
+          <button id="darkModeToggleMobile" class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center hover:bg-slate-300 dark:hover:bg-slate-600 transition" aria-label="Toggle dark mode">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:inline"></i>
+          </button>
+          <button class="md:hidden text-2xl" id="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 transition-all duration-300 max-h-0 overflow-hidden">
+        <div class="container mx-auto px-6 py-4 flex flex-col space-y-3">
+          <a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition py-2">Home</a>
+          <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition py-2">About</a>
+          <a href="#services" class="hover:text-blue-600 dark:hover:text-blue-400 transition py-2">Services</a>
+          <a href="#gallery" class="hover:text-blue-600 dark:hover:text-blue-400 transition py-2">Gallery</a>
+          <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition py-2">Contact</a>
+          <a href="#contact" class="bg-blue-600 dark:bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition text-center">Daftar Sekarang</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6 min-h-screen flex items-center bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+      <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 pr-0 md:pr-12" data-aos="fade-right" data-aos-duration="1000">
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 dark:text-white">Solusi Digital Terbaik untuk <span class="text-blue-600 dark:text-blue-400">Bisnis Anda</span></h1>
+          <p class="text-lg text-slate-600 dark:text-slate-300 mb-8">Kami membantu mewujudkan visi teknologi Anda dengan pengembangan perangkat lunak dan aplikasi mobile berstandar global.</p>
+          <div class="flex space-x-4">
+            <a href="#services" class="bg-blue-600 dark:bg-blue-500 text-white px-8 py-3 rounded-full hover:bg-blue-700 dark:hover:bg-blue-600 transition shadow-lg hover:shadow-xl">Layanan Kami</a>
+            <a href="#contact" class="border border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-full hover:bg-blue-50 dark:hover:bg-slate-800 transition">Hubungi Kami</a>
+          </div>
+        </div>
+        <div class="md:w-1/2 mt-12 md:mt-0" data-aos="fade-left" data-aos-duration="1000">
+          <img src="images/hero.jpg" alt="Hero Illustration" class="rounded-2xl shadow-2xl hover-zoom w-full object-cover" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-slate-800 px-6 transition-colors duration-300">
+      <div class="container mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2" data-aos="zoom-in">
+          <img src="images/about.jpg" alt="About Us" class="rounded-2xl shadow-xl w-full object-cover" />
+        </div>
+        <div class="md:w-1/2" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4 dark:text-white">Tentang TechNova</h2>
+          <p class="text-slate-600 dark:text-slate-300 mb-6">TechNova adalah startup teknologi inovatif yang didirikan pada tahun 2020. Kami berdedikasi untuk mentransformasi bisnis konvensional menjadi digital.</p>
+          <h3 class="text-xl font-semibold mb-2 dark:text-white">Visi & Misi</h3>
+          <p class="text-slate-600 dark:text-slate-300 mb-6">Menjadi katalisator transformasi digital nomor 1 di Indonesia dengan memberikan produk perangkat lunak yang inovatif, efisien, dan berpusat pada pengguna.</p>
+          <ul class="space-y-3 text-left inline-block">
+            <li class="dark:text-slate-300"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Tim Berpengalaman & Profesional</li>
+            <li class="dark:text-slate-300"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Dukungan Teknis 24/7</li>
+            <li class="dark:text-slate-300"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Harga Kompetitif</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Features Section -->
+    <section class="py-20 bg-slate-50 dark:bg-slate-900 px-6 transition-colors duration-300">
+      <div class="container mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4 dark:text-white">Mengapa Memilih Kami?</h2>
+          <p class="text-slate-600 dark:text-slate-300">Keunggulan sistem yang kami kembangkan untuk klien.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition text-center group" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:-translate-y-2 transition">
+              <i class="fas fa-bolt text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 dark:text-white">Cepat</h3>
+            <p class="text-slate-600 dark:text-slate-300">Proses instan dengan performa aplikasi yang dioptimalkan dengan standar Lighthouse.</p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition text-center group" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:-translate-y-2 transition">
+              <i class="fas fa-shield-alt text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 dark:text-white">Aman</h3>
+            <p class="text-slate-600 dark:text-slate-300">Data terenkripsi end-to-end dengan sistem keamanan siber yang mutakhir.</p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl transition text-center group" data-aos="fade-up" data-aos-delay="300">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:-translate-y-2 transition">
+              <i class="fas fa-smile text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 dark:text-white">Mudah</h3>
+            <p class="text-slate-600">Antarmuka user friendly yang dirancang khusus mengedepankan pengalaman pengguna (UX).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Services Section -->
+    <section id="services" class="py-20 bg-white dark:bg-slate-800 px-6 transition-colors duration-300">
+      <div class="container mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4 dark:text-white">Layanan Kami</h2>
+          <p class="text-slate-600 dark:text-slate-300">Pilih layanan digital yang sesuai dengan kebutuhan perusahaan Anda.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div class="border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition dark:bg-slate-700" data-aos="flip-left" data-aos-delay="100">
+            <img src="images/service1.jpg" alt="Web Development" class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 dark:text-white">Web Development</h3>
+              <p class="text-slate-600 dark:text-slate-300 mb-4">Pembuatan website responsif dan aplikasi berbasis web.</p>
+              <p class="text-blue-600 dark:text-blue-400 font-bold">Mulai dari Rp 5.000.000</p>
+            </div>
+          </div>
+          <!-- Service 2 -->
+          <div class="border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition dark:bg-slate-700" data-aos="flip-left" data-aos-delay="200">
+            <img src="images/service2.jpg" alt="Mobile Apps" class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 dark:text-white">Mobile Apps</h3>
+              <p class="text-slate-600 dark:text-slate-300 mb-4">Pembuatan aplikasi Android dan iOS native maupun hybrid.</p>
+              <p class="text-blue-600 dark:text-blue-400 font-bold">Mulai dari Rp 15.000.000</p>
+            </div>
+          </div>
+          <!-- Service 3 -->
+          <div class="border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition dark:bg-slate-700" data-aos="flip-left" data-aos-delay="300">
+            <img src="images/service3.jpg" alt="UI/UX Design" class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 dark:text-white">UI/UX Design</h3>
+              <p class="text-slate-600 dark:text-slate-300 mb-4">Riset pengguna dan desain purwarupa dengan interaksi tinggi.</p>
+              <p class="text-blue-600 dark:text-blue-400 font-bold">Mulai dari Rp 3.000.000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Testimonial Section -->
+    <section class="py-20 bg-blue-600 dark:bg-blue-900 text-white px-6 transition-colors duration-300">
+      <div class="container mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4">Apa Kata Mereka?</h2>
+          <p class="text-blue-100 dark:text-blue-200">Kisah sukses klien yang telah bekerja sama dengan kami.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testi 1 -->
+          <div class="bg-blue-700 dark:bg-blue-800 p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-center mb-4">
+              <img src="images/testi1.svg" alt="Budi" class="w-14 h-14 rounded-full mr-4 border-2 border-white object-cover" />
+              <div>
+                <h4 class="font-bold">Budi Santoso</h4>
+                <p class="text-sm text-blue-200 dark:text-blue-300">CEO TokoMaju</p>
+              </div>
+            </div>
+            <p class="italic">"Aplikasi mobile dari TechNova sangat stabil. Penjualan kami naik 40% sejak rilis aplikasi baru."</p>
+          </div>
+          <!-- Testi 2 -->
+          <div class="bg-blue-700 dark:bg-blue-800 p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex items-center mb-4">
+              <img src="images/testi2.svg" alt="Siti" class="w-14 h-14 rounded-full mr-4 border-2 border-white object-cover" />
+              <div>
+                <h4 class="font-bold">Siti Aminah</h4>
+                <p class="text-sm text-blue-200 dark:text-blue-300">Founder BeautySpace</p>
+              </div>
+            </div>
+            <p class="italic">"Desain UI/UX yang diberikan sangat elegan dan sesuai dengan target pasar kami yang didominasi milenial."</p>
+          </div>
+          <!-- Testi 3 -->
+          <div class="bg-blue-700 dark:bg-blue-800 p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex items-center mb-4">
+              <img src="images/testi3.svg" alt="Andi" class="w-14 h-14 rounded-full mr-4 border-2 border-white object-cover" />
+              <div>
+                <h4 class="font-bold">Andi Pratama</h4>
+                <p class="text-sm text-blue-200 dark:text-blue-300">Direktur Logistik Pro</p>
+              </div>
+            </div>
+            <p class="italic">"Sistem web adminnya sangat cepat dan aman. Terimakasih TechNova atas pelayanan 24/7 yang responsif!"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Gallery Section -->
+    <section id="gallery" class="py-20 bg-white dark:bg-slate-800 px-6 transition-colors duration-300">
+      <div class="container mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4 dark:text-white">Galeri Proyek</h2>
+          <p class="text-slate-600 dark:text-slate-300">Beberapa portofolio pekerjaan yang telah kami selesaikan.</p>
+        </div>
+        <!-- Grid Layout Gallery -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="100">
+            <img src="images/gallery1.jpg" class="w-full h-48 md:h-64 object-cover hover:scale-110 transition duration-500" alt="Gallery 1" />
+          </div>
+          <div class="overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="200">
+            <img src="images/gallery2.jpg" class="w-full h-48 md:h-64 object-cover hover:scale-110 transition duration-500" alt="Gallery 2" />
+          </div>
+          <div class="overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="300">
+            <img src="images/gallery3.jpg" class="w-full h-48 md:h-64 object-cover hover:scale-110 transition duration-500" alt="Gallery 3" />
+          </div>
+          <div class="overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="400">
+            <img src="images/gallery4.jpg" class="w-full h-48 md:h-64 object-cover hover:scale-110 transition duration-500" alt="Gallery 4" />
+          </div>
+          <div class="overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="500">
+            <img src="images/gallery5.jpg" class="w-full h-48 md:h-64 object-cover hover:scale-110 transition duration-500" alt="Gallery 5" />
+          </div>
+          <div class="overflow-hidden rounded-xl" data-aos="zoom-in" data-aos-delay="600">
+            <img src="images/gallery6.jpg" class="w-full h-48 md:h-64 object-cover hover:scale-110 transition duration-500" alt="Gallery 6" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Contact Section -->
+    <section id="contact" class="py-20 bg-slate-50 dark:bg-slate-900 px-6 transition-colors duration-300">
+      <div class="container mx-auto max-w-4xl bg-white dark:bg-slate-800 rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+        <div class="md:w-5/12 bg-blue-600 dark:bg-blue-900 text-white p-10 flex flex-col justify-center">
+          <h2 class="text-3xl font-bold mb-6">Mari Berdiskusi</h2>
+          <p class="mb-8">Tinggalkan pesan Anda, tim kami akan segera menghubungi kembali dalam waktu 1x24 jam.</p>
+          <div class="space-y-4">
+            <p><i class="fas fa-map-marker-alt w-6"></i> Jl. Sudirman No.1, Jakarta</p>
+            <p><i class="fas fa-phone w-6"></i> +62 812 3456 7890</p>
+            <p><i class="fas fa-envelope w-6"></i> hello@technova.com</p>
+          </div>
+        </div>
+        <div class="md:w-7/12 p-10 dark:bg-slate-800">
+          <form id="contactForm">
+            <div class="mb-4">
+              <label for="name" class="block text-sm font-semibold mb-2 dark:text-white">Nama Lengkap</label>
+              <input type="text" id="name" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-slate-700 dark:text-white dark:border-slate-600" placeholder="Masukkan nama Anda" />
+              <span id="nameError" class="text-red-500 dark:text-red-400 text-xs hidden">Nama wajib diisi.</span>
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-sm font-semibold mb-2 dark:text-white">Alamat Email</label>
+              <input type="email" id="email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-slate-700 dark:text-white dark:border-slate-600" placeholder="contoh@email.com" />
+              <span id="emailError" class="text-red-500 dark:text-red-400 text-xs hidden">Email wajib diisi dan valid.</span>
+            </div>
+            <div class="mb-6">
+              <label for="message" class="block text-sm font-semibold mb-2 dark:text-white">Pesan</label>
+              <textarea
+                id="message"
+                rows="4"
+                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-slate-700 dark:text-white dark:border-slate-600"
+                placeholder="Tuliskan pesan atau kebutuhan Anda"
+              ></textarea>
+              <span id="messageError" class="text-red-500 dark:text-red-400 text-xs hidden">Pesan tidak boleh kosong.</span>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 dark:bg-blue-700 text-white font-bold py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition">Kirim Pesan</button>
+            <!-- Notif Success -->
+            <div id="successNotif" class="mt-4 p-3 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 rounded-lg hidden text-center font-medium">Pesan berhasil dikirim!</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8.5 Stats Section (Nilai Plus - Counter Animation) -->
+    <section class="py-20 bg-blue-600 dark:bg-blue-900 text-white px-6 transition-colors duration-300">
+      <div class="container mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-3xl font-bold mb-4">Pencapaian TechNova</h2>
+          <p class="text-blue-100 dark:text-blue-200">Terbukti dengan angka-angka nyata dari klien kami</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Stat 1 -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-5xl font-bold mb-3 counter" data-target="125">0</div>
+            <p class="text-blue-100 dark:text-blue-200 text-lg">Proyek Selesai</p>
+          </div>
+          <!-- Stat 2 -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="text-5xl font-bold mb-3 counter" data-target="98">0</div>
+            <p class="text-blue-100 dark:text-blue-200 text-lg">Klien Puas (%)</p>
+          </div>
+          <!-- Stat 3 -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="text-5xl font-bold mb-3 counter" data-target="45">0</div>
+            <p class="text-blue-100 dark:text-blue-200 text-lg">Tim Profesional</p>
+          </div>
+          <!-- Stat 4 -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+            <div class="text-5xl font-bold mb-3 counter" data-target="4">0</div>
+            <p class="text-blue-100 dark:text-blue-200 text-lg">Tahun Pengalaman</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Footer -->
+    <footer class="bg-slate-900 dark:bg-slate-950 text-slate-300 py-12 px-6 transition-colors duration-300">
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-slate-700 dark:border-slate-800 pb-8">
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-4">TechNova.</h3>
+          <p class="mb-4 text-slate-400 dark:text-slate-500">Partner terpercaya untuk digitalisasi bisnis masa depan.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-700 flex items-center justify-center hover:bg-blue-600 dark:hover:bg-blue-500 transition text-white" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-700 flex items-center justify-center hover:bg-blue-600 dark:hover:bg-blue-500 transition text-white" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-700 flex items-center justify-center hover:bg-blue-600 dark:hover:bg-blue-500 transition text-white" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-700 flex items-center justify-center hover:bg-blue-600 dark:hover:bg-blue-500 transition text-white" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Tautan Cepat</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-slate-400 dark:text-slate-500 hover:text-white transition">Home</a></li>
+            <li><a href="#about" class="text-slate-400 dark:text-slate-500 hover:text-white transition">About Us</a></li>
+            <li><a href="#services" class="text-slate-400 dark:text-slate-500 hover:text-white transition">Services</a></li>
+            <li><a href="#contact" class="text-slate-400 dark:text-slate-500 hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Hubungi Kami</h4>
+          <p class="mb-2 text-slate-400 dark:text-slate-500"><i class="fas fa-map-marker-alt mr-2"></i> Jl. Sudirman No.1, Jakarta</p>
+          <p class="mb-2 text-slate-400 dark:text-slate-500"><i class="fas fa-envelope mr-2"></i> hello@technova.com</p>
+          <p class="text-slate-400 dark:text-slate-500"><i class="fas fa-phone mr-2"></i> +62 812 3456 7890</p>
+        </div>
+      </div>
+      <div class="container mx-auto text-center pt-8 text-sm text-slate-500 dark:text-slate-600">&copy; 2024 TechNova. All rights reserved. | Dibuat untuk Quiz Akhir Perancangan Web.</div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-blue-600 dark:bg-blue-700 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hidden hover:bg-blue-700 dark:hover:bg-blue-600 transition z-50"
+      aria-label="Back to top"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

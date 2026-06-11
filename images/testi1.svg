@@ -1,0 +1,7 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="100" fill="#2563eb"/>
+  <circle cx="100" cy="80" r="30" fill="#e0e7ff"/>
+  <text x="100" y="105" font-size="50" text-anchor="middle" fill="#2563eb" font-weight="bold">B</text>
+  <rect x="60" y="130" width="80" height="50" fill="#1e40af" rx="5"/>
+  <text x="100" y="160" font-size="12" text-anchor="middle" fill="#e0e7ff" font-weight="bold">Budi</text>
+</svg>
